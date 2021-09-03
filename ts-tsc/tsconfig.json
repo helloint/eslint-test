@@ -1,0 +1,25 @@
+{
+  "files": [
+    "src/index.ts"
+  ],
+  "compilerOptions": {
+    "declaration": true,
+//    "emitDeclarationOnly": true, // enable this only if you choose babel to compile
+    //    "noEmit": true, // enable this only if you just use 'tsc' to do type check
+    //"module": "esnext",  // default 'CommonJS'
+    "target": "es5",
+    // for app
+    //    "target": "es2021", // for JavaScript Library, just compile from TS to JS
+    "esModuleInterop": true,
+    //    "experimentalDecorators": true,
+    "outDir": "dist",
+    "lib": [
+      //      "es2018",
+      "es2021",
+      "dom"
+    ],
+    "moduleResolution": "node",
+    "jsx": "react-jsx"
+    //    "allowJs": true,
+  }
+}

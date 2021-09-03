@@ -1,0 +1,27 @@
+{
+  "name": "ts-tsc",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "clean": "rd /s /q \"./dist\"",
+    "build": "npm run clean && tsc",
+    "lint": "eslint src/",
+    "tsclib": "tsc --help"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^17.0.17",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "eslint": "^7.8.1",
+    "eslint-plugin-react": "^7.20.6",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "firebase-admin": "^9.11.1",
+    "react": "^17.0.2"
+  }
+}
