@@ -1,7 +1,7 @@
 module.exports = {
-	// parser: '@babel/eslint-parser',
+	parser: '@babel/eslint-parser',
 	parserOptions: {
-		// requireConfigFile: false,	// for babel parser
+		requireConfigFile: false,	// for babel parser
 		sourceType: 'module', // included in airbnb
 		// ecmaVersion: 2015 // included in 'env.es6'
 	},

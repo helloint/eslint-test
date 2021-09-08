@@ -1,4 +1,36 @@
 export default () => {
+	// Stage 0: https://github.com/tc39/proposal-bind-operator
+	// https://babeljs.io/docs/en/babel-plugin-proposal-function-bind
+	// Not in @babel/preset-env, so you need to install this plugin manually
+	const box = {
+		weight: 2,
+		getWeight() {
+			return this.weight;
+		},
+	};
+
+	const { getWeight } = box;
+	console.log(box.getWeight()); // prints '2'
+	const bigBox = { weight: 10 };
+	console.log(bigBox::getWeight()); // prints '10'
+
+	// ES2022 (eslint v8.0)
+	// https://babeljs.io/docs/en/babel-plugin-proposal-class-properties
+	// Included in @babel/preset-env, so you don't need to install separately.
+	class Bork {
+		//Property initializer syntax
+		instanceProperty = 'bork';
+
+		boundFunction = () => {
+			return this.instanceProperty;
+		};
+	}
+	let myBork = new Bork();
+	//Property initializers are not on the prototype.
+	console.log(myBork.__proto__.boundFunction); // > undefined
+	//Bound functions are bound to the class instance.
+	console.log(myBork.boundFunction.call(undefined)); // > "bork"
+
 	let idx = 0;
 	// String.prototype.replaceAll https://github.com/tc39/proposal-string-replaceall
 	// ES2021 'es2021.string'
