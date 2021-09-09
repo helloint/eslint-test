@@ -1,15 +1,15 @@
 module.exports = {
-	'parserOptions': {
+	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 10,
 		ecmaFeatures: {
-			'jsx': true
+			jsx: true,
 		},
 	},
 	settings: {
 		react: {
 			version: 'detect',
-		}
+		},
 	},
 	plugins: [
 		'react',
@@ -17,6 +17,8 @@ module.exports = {
 	extends: [
 		'eslint:recommended', // node_modules/eslint/conf/eslint-recommended.js
 		'plugin:react/recommended', // node_modules/eslint-plugin-react/index.js
+		'plugin:jsx-a11y/recommended', // node_modules/eslint-plugin-jsx-a11y/lib/index.js
+		// 'airbnb',
 	],
 	rules: {
 		'linebreak-style': 0, // airbnb set to 'LF', not friendly to Windows which by default use CRLF from github clone
@@ -39,16 +41,28 @@ module.exports = {
 	overrides: [
 		{
 			parser: '@typescript-eslint/parser',
+			parserOptions: {
+				/**
+				 * Resolve issue:
+				 * Error while loading rule '@typescript-eslint/dot-notation': You have used a rule which
+				 * requires parserServices to be generated. You must therefore provide a value for the
+				 * "parserOptions.project" property for @typescript-e slint/parser.
+				 * This rule is enabled in `airbnb-typescript`
+				 */
+				project: ['tsconfig.json'],
+			},
 			plugins: [
 				'@typescript-eslint/eslint-plugin',
 			],
 			files: ['*.{ts,tsx}'],
 			extends: [
 				'plugin:@typescript-eslint/recommended', // node_modules/@typescript-eslint/eslint-plugin/dist/index.js
+				// 'airbnb-typescript',
 			],
 			rules: {
+				'@typescript-eslint/indent': [2, 'tab'],
 				'@typescript-eslint/no-unused-vars': 2,
-			}
-		}
+			},
+		},
 	],
 };

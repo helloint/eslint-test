@@ -1,6 +1,5 @@
-export * from './TestBrowser';
-export * from './TestES';
-export * from './TestJSX';
+export { default as TestBrowser } from './TestBrowser';
+export { default as TestES } from './TestES';
+export { default as TestJSX } from './TestJSX';
 export * from './TestTS';
-export * from './TestTSX';
-
+export { default as TestTSX } from './TestTSX';

@@ -15,10 +15,10 @@ module.exports = {
 		'eslint-plugin-jsx-a11y',
 	],
 	extends: [
-		// 'airbnb',
 		'eslint:recommended', // node_modules/eslint/conf/eslint-recommended.js
 		'plugin:react/recommended', // node_modules/eslint-plugin-react/index.js
-		'plugin:jsx-a11y/recommended' // node_modules/eslint-plugin-jsx-a11y/lib/index.js
+		'plugin:jsx-a11y/recommended', // node_modules/eslint-plugin-jsx-a11y/lib/index.js
+		// 'airbnb',
 	],
 	rules: {
 		'linebreak-style': 0, // airbnb set to 'LF', not friendly to Windows which by default use CRLF from github clone
