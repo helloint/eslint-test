@@ -23,8 +23,8 @@ export const minus = (a: number, b: number): number => a - b;
 // ES2020 'es2020.bigint'
 // export const sum = (a: bigint, b: bigint): bigint => a + b;
 
-const b = 2; // Comment this line to test 'no-undef'
-export const a = 1 + b;
+const b = 2; // Test
+export const a = 1 + b; // Comment this line to test 'no-undef' and '@typescript-eslint/no-unused-vars'
 
 export type SomeThing = {
 	id: string;

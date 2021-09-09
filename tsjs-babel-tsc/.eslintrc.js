@@ -24,12 +24,6 @@ module.exports = {
 		indent: [2, 'tab'],
 		'react/jsx-indent': [2, 'tab'], // airbnb set to '[2, 2]', conflict with 'indent' setting
 		quotes: [2, 'single'],
-		/**
-		 * The rule being disabled by `plugin:@typescript-eslint/recommended`
-		 * see https://stackoverflow.com/questions/65054079/eslint-with-typescript-and-firebase-no-undef-error
-		 * still no idea why it says 'TypeScript just does this significantly better'
-		 */
-		// 'no-undef': 2,
 		'no-multi-spaces': [2, {
 			ignoreEOLComments: false,
 		}],
@@ -52,6 +46,9 @@ module.exports = {
 			extends: [
 				'plugin:@typescript-eslint/recommended', // node_modules/@typescript-eslint/eslint-plugin/dist/index.js
 			],
+			rules: {
+				'@typescript-eslint/no-unused-vars': 2,
+			}
 		}
 	],
 };
