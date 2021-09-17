@@ -1,4 +1,18 @@
 module.exports = {
+	env: {
+		// es6: true, // Allow: 'Symbol'. alias of 'es2015'
+		// es2017: true,
+		es2020: true, // Allow: BigInt(including literal: 1n)
+		// es2021: true, // Allow: String.prototype.replaceAll
+		node: true, // Allow: `module.exports`
+		browser: true, // Allow: `window`, `alert`
+	},
+	extends: [
+		'eslint:recommended', // node_modules/eslint/conf/eslint-recommended.js
+		'plugin:react/recommended', // node_modules/eslint-plugin-react/index.js
+		'plugin:jsx-a11y/recommended', // node_modules/eslint-plugin-jsx-a11y/lib/index.js
+		// 'airbnb',
+	],
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 10,
@@ -6,20 +20,14 @@ module.exports = {
 			jsx: true,
 		},
 	},
+	plugins: [
+		'react',
+	],
 	settings: {
 		react: {
 			version: 'detect',
 		},
 	},
-	plugins: [
-		'react',
-	],
-	extends: [
-		'eslint:recommended', // node_modules/eslint/conf/eslint-recommended.js
-		'plugin:react/recommended', // node_modules/eslint-plugin-react/index.js
-		'plugin:jsx-a11y/recommended', // node_modules/eslint-plugin-jsx-a11y/lib/index.js
-		// 'airbnb',
-	],
 	rules: {
 		'linebreak-style': 0, // airbnb set to 'LF', not friendly to Windows which by default use CRLF from github clone
 		'no-tabs': 0,
@@ -31,16 +39,13 @@ module.exports = {
 			ignoreEOLComments: false,
 		}],
 	},
-	env: {
-		// es6: true, // Allow: 'Symbol'. alias of 'es2015'
-		// es2017: true,
-		es2020: true, // Allow: BigInt(including literal: 1n)
-		// es2021: true, // Allow: String.prototype.replaceAll
-		node: true, // Allow: `module.exports`
-		browser: true, // Allow: `window`, `alert`
-	},
 	overrides: [
 		{
+			files: ['*.{ts,tsx}'],
+			extends: [
+				'plugin:@typescript-eslint/recommended', // node_modules/@typescript-eslint/eslint-plugin/dist/index.js
+				// 'airbnb-typescript',
+			],
 			parser: '@typescript-eslint/parser',
 			parserOptions: {
 				/**
@@ -54,11 +59,6 @@ module.exports = {
 			},
 			plugins: [
 				'@typescript-eslint/eslint-plugin',
-			],
-			files: ['*.{ts,tsx}'],
-			extends: [
-				'plugin:@typescript-eslint/recommended', // node_modules/@typescript-eslint/eslint-plugin/dist/index.js
-				// 'airbnb-typescript',
 			],
 			rules: {
 				indent: 0,

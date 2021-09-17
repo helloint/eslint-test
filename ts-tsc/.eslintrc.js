@@ -1,4 +1,19 @@
 module.exports = {
+	root: true,
+	env: {
+		// es6: true, // alias of 'es2015'
+		// es2017: true,
+		node: true, // `module.exports`
+		// browser: true, // `window`
+	},
+	extends: [
+		'eslint:recommended', // node_modules/eslint/conf/eslint-recommended.js
+		'plugin:@typescript-eslint/recommended', // node_modules/@typescript-eslint/eslint-plugin/dist/index.js
+		'plugin:react/recommended', // node_modules/eslint-plugin-react/index.js
+		'plugin:jsx-a11y/recommended', // node_modules/eslint-plugin-jsx-a11y/lib/index.js
+		// 'airbnb',
+		// 'airbnb-typescript',
+	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		/**
@@ -12,14 +27,6 @@ module.exports = {
 	},
 	plugins: [
 		'@typescript-eslint/eslint-plugin',
-	],
-	extends: [
-		'eslint:recommended', // node_modules/eslint/conf/eslint-recommended.js
-		'plugin:@typescript-eslint/recommended', // node_modules/@typescript-eslint/eslint-plugin/dist/index.js
-		'plugin:react/recommended', // node_modules/eslint-plugin-react/index.js
-		'plugin:jsx-a11y/recommended', // node_modules/eslint-plugin-jsx-a11y/lib/index.js
-		// 'airbnb',
-		// 'airbnb-typescript',
 	],
 	settings: {
 		'react': {
@@ -45,11 +52,5 @@ module.exports = {
 		'@typescript-eslint/no-unused-vars': 2, // override 'plugin:@typescript-eslint/recommended'
 		'no-shadow': 0,
 		'@typescript-eslint/no-shadow': 2,
-	},
-	env: {
-		// es6: true, // alias of 'es2015'
-		// es2017: true,
-		node: true, // `module.exports`
-		// browser: true, // `window`
 	},
 };

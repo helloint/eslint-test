@@ -44,6 +44,11 @@ export default () => {
 	// 	console.log(num);
 	// }
 
+	// ES2020 Dynamic Import https://github.com/tc39/proposal-dynamic-import
+	if (getWeight !== null) {
+		import('./aModule');
+	}
+
 	// TODO: I want to find a ES2020 feature to test `compilerOptions.lib`, but failed
 	// Both in ES2020 and TS, so doesn't affect by 'lib'
 	// null ?? 'some truthy value';
