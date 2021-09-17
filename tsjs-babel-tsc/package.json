@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rd /s /q \"./dist\"",
     "build": "npm run clean && tsc && babel src --extensions \".js,.jsx,.ts,.tsx\" -d dist",
-    "lint": "eslint --ext .js,.ts src/"
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx"
   },
   "keywords": [],
   "author": "",

@@ -1,5 +1,4 @@
-// The following line is not needed since React 17
-import React from 'react';
+import React from 'react'; // Not needed since React 17
 
 function handleError(errorCode) {
 	return errorCode;

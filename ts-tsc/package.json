@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rd /s /q \"./dist\"",
     "build": "npm run clean && tsc",
-    "lint": "eslint src/",
+    "lint": "eslint src",
     "tsclib": "tsc --help"
   },
   "keywords": [],

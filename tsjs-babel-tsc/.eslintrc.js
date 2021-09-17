@@ -25,6 +25,7 @@ module.exports = {
 		'no-tabs': 0,
 		indent: [2, 'tab'],
 		'react/jsx-indent': [2, 'tab'], // airbnb set to '[2, 2]', conflict with 'indent' setting
+		'no-unused-vars': 2,
 		quotes: [2, 'single'],
 		'no-multi-spaces': [2, {
 			ignoreEOLComments: false,
@@ -60,8 +61,11 @@ module.exports = {
 				// 'airbnb-typescript',
 			],
 			rules: {
+				indent: 0,
 				'@typescript-eslint/indent': [2, 'tab'],
 				'@typescript-eslint/no-unused-vars': 2,
+				'no-shadow': 0, // https://stackoverflow.com/questions/63961803/eslint-says-all-enums-in-typescript-app-are-already-declared-in-the-upper-scope
+				'@typescript-eslint/no-shadow': 2,
 			},
 		},
 	],

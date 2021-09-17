@@ -2,13 +2,13 @@ module.exports = {
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		/**
-		 * Resolve issue:
-		 * Error while loading rule '@typescript-eslint/dot-notation': You have used a rule which
-		 * requires parserServices to be generated. You must therefore provide a value for the
-		 * "parserOptions.project" property for @typescript-e slint/parser.
-		 * This rule is enabled in `airbnb-typescript`
+		 * Enable 'project' option to resolve the issue:
+		 *  Error while loading rule '@typescript-eslint/dot-notation': You have used a rule which
+		 *  requires parserServices to be generated. You must therefore provide a value for the
+		 *  "parserOptions.project" property for @typescript-eslint/parser.
+		 * Note: This rule is enabled in `airbnb-typescript`
 		 */
-		project: ['tsconfig.json'],
+		// project: ['tsconfig.json'],
 	},
 	plugins: [
 		'@typescript-eslint/eslint-plugin',
@@ -21,6 +21,11 @@ module.exports = {
 		// 'airbnb',
 		// 'airbnb-typescript',
 	],
+	settings: {
+		'react': {
+			'version': 'detect',
+		}
+	},
 	rules: {
 		'linebreak-style': 0, // airbnb set to 'LF', not friendly to Windows which by default use CRLF from github clone
 		'no-tabs': 0,
@@ -38,6 +43,8 @@ module.exports = {
 		// 'no-undef': 2,
 		// 'no-multi-spaces': 2
 		'@typescript-eslint/no-unused-vars': 2, // override 'plugin:@typescript-eslint/recommended'
+		'no-shadow': 0,
+		'@typescript-eslint/no-shadow': 2,
 	},
 	env: {
 		// es6: true, // alias of 'es2015'
