@@ -13,10 +13,11 @@ module.exports = {
 		'plugin:react/recommended', // node_modules/eslint-plugin-react/index.js
 		'plugin:jsx-a11y/recommended', // node_modules/eslint-plugin-jsx-a11y/lib/index.js
 		// 'airbnb',
+		'plugin:prettier/recommended',
 	],
 	parser: '@babel/eslint-parser',
 	parserOptions: {
-		requireConfigFile: false,	// for babel parser
+		requireConfigFile: false, // for babel parser
 		sourceType: 'module', // included in airbnb
 		// ecmaVersion: 2015 // included in 'env.es6'
 	},
@@ -27,7 +28,7 @@ module.exports = {
 	settings: {
 		react: {
 			version: 'detect',
-		}
+		},
 	},
 	rules: {
 		'linebreak-style': 0, // airbnb set to 'LF', not friendly to Windows which by default use CRLF from github clone

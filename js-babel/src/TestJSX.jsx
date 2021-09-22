@@ -4,10 +4,6 @@ function handleError(errorCode) {
 	return errorCode;
 }
 
-const TestJSX = () => (
-	<>
-		{ handleError(500) }
-	</>
-);
+const TestJSX = () => <>{handleError(500)}</>;
 
 export default TestJSX;
