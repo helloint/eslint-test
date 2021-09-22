@@ -1,40 +1,44 @@
 {
-  "name": "js-babel",
-  "private": true,
-  "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "clean": "rimraf dist",
-    "build": "npm run clean && babel src -d dist",
-    "lint": "eslint src --ext .js,.jsx",
-    "lint:fix": "eslint src --ext .js,.jsx --fix",
-    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,json}",
-    "format:check": "prettier --check src/**/*.{js,jsx,ts,tsx,css,json}"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/cli": "^7.15.4",
-    "@babel/core": "^7.15.5",
-    "@babel/eslint-parser": "^7.15.4",
-    "@babel/plugin-proposal-function-bind": "^7.14.5",
-    "@babel/plugin-transform-runtime": "^7.15.0",
-    "@babel/preset-env": "^7.15.4",
-    "@babel/preset-react": "^7.14.5",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.25.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "2.4.1",
-    "rimraf": "^3.0.2"
-  },
-  "dependencies": {
-    "firebase-admin": "^9.11.1",
-    "react": "^17.0.2"
-  }
+	"name": "js-babel",
+	"private": true,
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"clean": "rimraf dist",
+		"build": "npm run clean && babel src -d dist",
+		"lint": "eslint src --ext .js,.jsx",
+		"lint:fix": "eslint src --ext .js,.jsx --fix",
+		"format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,json}",
+		"format:check": "prettier --check src/**/*.{js,jsx,ts,tsx,css,json}",
+		"pretty-quick": "pretty-quick --staged",
+		"prepare": "cd .. && husky install js-babel/.husky"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/cli": "^7.15.4",
+		"@babel/core": "^7.15.5",
+		"@babel/eslint-parser": "^7.15.4",
+		"@babel/plugin-proposal-function-bind": "^7.14.5",
+		"@babel/plugin-transform-runtime": "^7.15.0",
+		"@babel/preset-env": "^7.15.4",
+		"@babel/preset-react": "^7.14.5",
+		"eslint": "^7.32.0",
+		"eslint-config-airbnb": "^18.2.1",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-import": "^2.24.2",
+		"eslint-plugin-jsx-a11y": "^6.4.1",
+		"eslint-plugin-prettier": "^4.0.0",
+		"eslint-plugin-react": "^7.25.1",
+		"eslint-plugin-react-hooks": "^4.2.0",
+		"husky": "^7.0.0",
+		"prettier": "2.4.1",
+		"pretty-quick": "^3.1.1",
+		"rimraf": "^3.0.2"
+	},
+	"dependencies": {
+		"firebase-admin": "^9.11.1",
+		"react": "^17.0.2"
+	}
 }
