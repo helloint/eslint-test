@@ -14,7 +14,7 @@ module.exports = {
 		'plugin:jsx-a11y/recommended', // node_modules/eslint-plugin-jsx-a11y/lib/index.js
 		// 'airbnb',
 	],
-	// parser: '@babel/eslint-parser',
+	parser: '@babel/eslint-parser',
 	parserOptions: {
 		requireConfigFile: false,	// for babel parser
 		sourceType: 'module', // included in airbnb
