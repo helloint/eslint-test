@@ -103,13 +103,25 @@ dataArr.map((item, index) => {
 dataArr.map(processItem);
 
 // (3) Array.from
-Array.from(dataMap, ([key, value]) => {
-	processItem(value);
-});
 Array.from(dataMap.values(), (value) => {
 	processItem(value);
 });
+Array.from(dataMap, ([key, value]) => {
+	processItem(value);
+});
+Array.from(dataMap.entries(), ([key, value]) => {
+	processItem(value);
+});
 Array.from(dataMap.keys(), (key) => {
+	processItem(dataMap.get(key));
+});
+Array.from(Object.values(dataObj), (value) => {
+	processItem(value);
+});
+Array.from(Object.entries(dataObj), ([key, value]) => {
+	processItem(value);
+});
+Array.from(Object.keys(dataObj), (key) => {
 	processItem(dataMap.get(key));
 });
 
@@ -203,7 +215,7 @@ if (JSON.stringify(dataArr) !== dataArrSnapShot) {
 	console.log(`dataArr changed`);
 }
 if (JSON.stringify(dataObj) !== dataObjSnapShot) {
-	console.log(`dataObjResult changed`);
+	console.log(`dataObj changed`);
 }
 if (JSON.stringify(Array.from(dataMap.entries())) !== dataMapSnapShot) {
 	console.log(`dataMap changed`);
