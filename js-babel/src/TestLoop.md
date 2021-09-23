@@ -28,13 +28,6 @@ ESLint provides a rule: [no-restricted-syntax](https://eslint.org/docs/rules/no-
 ],
 ```
 
-## My Understanding
-
-I think Airbnb team do this for the following purpose:
-
-1. The polyfill of `for..of` [doesn't work well](https://github.com/airbnb/javascript/issues/1271#issuecomment-281756069) and Airbnb still supports [IE 11](https://github.com/airbnb/javascript/issues/1271#issuecomment-635133150). They take it very seriously.
-2. They encourage to use function in a ["functional"](https://gist.github.com/ljharb/58faf1cfcb4e6808f74aae4ef7944cff#intro) way
-
 ## Arrays built in methods
 
 I summarized all the loop/iterators related APIs here:
@@ -45,12 +38,12 @@ I summarized all the loop/iterators related APIs here:
 - [`for...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
 - [`Array.prototype.forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)  
    为 Array 对象引入了 Array.forEach 方法以代替 for 循环，Array.forEach 方法的特点是自带闭包，以解决因为缺乏块级作用域导致需要使用取巧的方法来解决 var 的作用域问题。
-- `Array.prototype.map()`
-- `Array.prototype.filter()`
-- `Array.prototype.reduce()`
+- [`Array.prototype.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+- [`Array.prototype.filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- [`Array.prototype.reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
 - [`Array.prototype.every()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
 - [`Array.prototype.some()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
-- `Object.keys()`
+- [`Object.keys()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
 
 ### ES6/ES2015
 
@@ -60,18 +53,29 @@ I summarized all the loop/iterators related APIs here:
 - [`Array.prototype.values()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values)
 - [`Array.prototype.entries()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries)  
    在 ES2015 标准中，数组类型再次被赋予了一个名为 entries 的方法，它可以返回对应的数组中每一个元素与其下标配对的一个新数组。
-- `Array.prototype.find()`
-- `Array.prototype.findIndex()`
+- [`Array.prototype.find()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+- [`Array.prototype.findIndex()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
 
 ### ES2016
 
-- `Array.prototype.includes()`  
+- [`Array.prototype.includes()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)  
    indexOf 通过返回值是否等于-1 来获得查询对象是否被该数组包含。而 includes 则是通过返回 true 或者 false 来得出结果，对于只是查询是否包含，语义显得更清晰一些。
 
 ### ES2017
 
-- `Object.entries()`
-- `Object.values()`
+- [`Object.entries()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries)
+- [`Object.values()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values)
+
+## Best Practice
+
+See `TestLoop.js`
+
+## My Understanding
+
+I think Airbnb team do this for the following purpose:
+
+1. The polyfill of `for..of` [doesn't work well](https://github.com/airbnb/javascript/issues/1271#issuecomment-281756069) and Airbnb still supports [IE 11](https://github.com/airbnb/javascript/issues/1271#issuecomment-635133150). They take it very seriously.
+2. They encourage to use function in a ["functional"](https://gist.github.com/ljharb/58faf1cfcb4e6808f74aae4ef7944cff#intro) way
 
 ## Related Topic
 
