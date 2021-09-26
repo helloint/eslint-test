@@ -127,7 +127,7 @@ Array.from(Object.keys(dataObj), (key) => {
 
 /*
 	Use Case: Finding a single element in the array
-	Best Choice: Array.prototype.find()
+	Best Choice: Array.prototype.find() / includes()
  */
 // (1) loop
 for (let i = 0; i < dataArr.length; i++) {
@@ -167,6 +167,7 @@ for (const item of dataArr) {
 	}
 }
 
+result = dataArr.includes(3);
 result = dataArr.find((item) => item === 3);
 result = dataArr.findIndex((item) => item === 3);
 result = dataArr.filter((item) => item === 3).shift(); // not good, filter loop every item.
