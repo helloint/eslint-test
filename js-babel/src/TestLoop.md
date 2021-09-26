@@ -55,7 +55,7 @@ I summarized all the loop/iterators related APIs here:
    在 ES2015 标准中，数组类型再次被赋予了一个名为 entries 的方法，它可以返回对应的数组中每一个元素与其下标配对的一个新数组。
 - [`Array.prototype.find()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
 - [`Array.prototype.findIndex()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
-- [`Array.prototype.includes()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+- [`Array.from()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
 
 ### ES2016
 

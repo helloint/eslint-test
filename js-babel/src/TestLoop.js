@@ -46,25 +46,25 @@ dataArr.forEach((item) => {
 Object.keys(dataObj).forEach((key) => {
 	result = processItem(dataObj[key]);
 });
-
-Object.entries(dataObj).forEach((key, index) => {
-	result = processItem(dataObj[key], index);
+Object.values(dataObj).forEach((value) => {
+	result = processItem(value);
+});
+Object.entries(dataObj).forEach(([key, value]) => {
+	result = processItem(dataObj[key]);
+	result = processItem(value);
 });
 
 for (const item in dataArr) {
 	result = processItem(item);
 }
-
 for (let item in dataArr) {
 	item = processItem(item);
 }
-
 for (const item in dataArr) {
 	if (dataArr.hasOwnProperty(item)) {
 		result = processItem(item);
 	}
 }
-
 for (let item in dataArr) {
 	if (dataArr.hasOwnProperty(item)) {
 		item = processItem(item);
@@ -74,7 +74,6 @@ for (let item in dataArr) {
 for (const item of dataArr) {
 	result = processItem(item);
 }
-
 for (let item of dataArr) {
 	item = processItem(item);
 }
@@ -82,15 +81,12 @@ for (let item of dataArr) {
 for (const key of Object.keys(dataObj)) {
 	result = processItem(key);
 }
-
 for (let key of Object.keys(dataObj)) {
 	key = processItem(key);
 }
-
 for (const value of Object.values(dataObj)) {
 	result = processItem(value);
 }
-
 for (const [key, index] of Object.entries(dataObj)) {
 	dataObj[key] = processItem(dataObj[key], index);
 }
@@ -103,26 +99,29 @@ dataArr.map((item, index) => {
 dataArr.map(processItem);
 
 // (3) Array.from
-Array.from(dataMap.values(), (value) => {
-	processItem(value);
-});
 Array.from(dataMap, ([key, value]) => {
-	processItem(value);
-});
-Array.from(dataMap.entries(), ([key, value]) => {
+	processItem(dataMap.get(key));
 	processItem(value);
 });
 Array.from(dataMap.keys(), (key) => {
+	processItem(dataMap.get(key));
+});
+Array.from(dataMap.values(), (value) => {
+	processItem(value);
+});
+Array.from(dataMap.entries(), ([key, value]) => {
+	processItem(dataMap.get(key));
+	processItem(value);
+});
+Array.from(Object.keys(dataObj), (key) => {
 	processItem(dataMap.get(key));
 });
 Array.from(Object.values(dataObj), (value) => {
 	processItem(value);
 });
 Array.from(Object.entries(dataObj), ([key, value]) => {
+	processItem(dataObj[key]);
 	processItem(value);
-});
-Array.from(Object.keys(dataObj), (key) => {
-	processItem(dataMap.get(key));
 });
 
 /*
