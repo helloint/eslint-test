@@ -289,6 +289,86 @@ if (false) {
 	}
 }
 
+/*
+	Async calls in sequence
+	Best Choice: for...of
+
+	Async calls in parallel
+	Best Choice: .map()
+
+	Ref: https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop
+ */
+function asyncForEach(testArr) {
+	testArr.forEach(async (x) => {
+		console.log(`forEach's ${x} starts at ${currentDateString()}`);
+		await asyncPrint(x);
+		console.log(`forEach's ${x} ends at ${currentDateString()}`);
+	});
+	console.log('done');
+}
+
+if (false) {
+	asyncForEach(dataArr);
+}
+
+async function asyncForIn(testArr) {
+	for (let x of testArr) {
+		console.log(`forIn's ${x} starts at ${currentDateString()}`);
+		await asyncPrint(x);
+		console.log(`forIn's ${x} ends at ${currentDateString()}`);
+	}
+	console.log('done');
+}
+
+if (false) {
+	asyncForIn(dataArr);
+	console.log('done');
+}
+
+async function asyncFor(testArr) {
+	for (let i = 0; i < testArr.length; i++) {
+		const x = testArr[i];
+		console.log(`for's ${x} starts at ${currentDateString()}`);
+		await asyncPrint(x);
+		console.log(`for's ${x} ends at ${currentDateString()}`);
+	}
+	console.log('done');
+}
+
+if (false) {
+	asyncFor(dataArr);
+}
+
+async function asyncMap(testArr) {
+	await Promise.all(
+		testArr.map(async (x) => {
+			console.log(`map's ${x} starts at ${currentDateString()}`);
+			await asyncPrint(x);
+			console.log(`map's ${x} ends at ${currentDateString()}`);
+		})
+	);
+	console.log('done');
+}
+
+if (true) {
+	asyncMap(dataArr);
+}
+
+function asyncPrint(x) {
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			console.log(x);
+			resolve();
+		}, x * 1000);
+	});
+}
+
+function currentDateString() {
+	const date = new Date();
+	return `${date.getMinutes()}:${date.getSeconds()}.${date.getMilliseconds()}`;
+}
+
+// Result
 let testResult = [separator];
 testResult.push('Test Result:');
 testResult.push(`result: ${result}`);
